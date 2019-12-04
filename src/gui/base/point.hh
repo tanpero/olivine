@@ -1,0 +1,7 @@
+#ifndef _OLIVINE_GUI_BASE_POINT_HH_
+#define _OLIVINE_GUI_BASE_POINT_HH_
+
+
+
+
+#endif // !_OLIVINE_GUI_BASE_POINT_HH_
