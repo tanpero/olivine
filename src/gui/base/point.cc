@@ -14,6 +14,17 @@ base::Point::Point(double x, double y)
 {
 }
 
+base::Point::Point(std::pair<double, double> pair)
+{
+	_x = pair.first;
+	_y = pair.second;
+}
+
+bool base::Point::operator==(Point & rhs)
+{
+	return _x == rhs._x && _y == rhs._y;
+}
+
 void base::Point::goByX(double path)
 {
 	_x += path;
@@ -28,6 +39,11 @@ void base::Point::fromPolar(double r, double sitha)
 {
 	_x = r * std::cos(sitha);
 	_y = r * std::sin(sitha);
+}
+
+std::pair<double, double> base::Point::toPair()
+{
+	return { _x, _y };
 }
 
 double base::distance(Point& a, Point& b)

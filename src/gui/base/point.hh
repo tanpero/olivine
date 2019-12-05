@@ -4,6 +4,7 @@
 #include <gui/base/def.hh>
 
 #include <cmath>
+#include <tuple>
 
 BEGIN_GUI_NAMESPACE
 
@@ -17,6 +18,7 @@ namespace base
 
 	public:
 		Point(double x, double y);
+		Point(std::pair<double, double> pair);
 
 	public:
 		bool operator==(Point& rhs);
@@ -24,6 +26,7 @@ namespace base
 		void goByX(double path);
 		void goByY(double path);
 		void fromPolar(double r, double sitha);
+		std::pair<double, double> toPair();
 
 	public:
 		friend double distance(Point& a, Point& b);
