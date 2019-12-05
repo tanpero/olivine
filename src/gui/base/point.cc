@@ -25,6 +25,11 @@ bool base::Point::operator==(Point & rhs)
 	return _x == rhs._x && _y == rhs._y;
 }
 
+bool base::Point::operator!=(Point & rhs)
+{
+	return !(*this == rhs);
+}
+
 void base::Point::goByX(double path)
 {
 	_x += path;

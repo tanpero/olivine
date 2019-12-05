@@ -29,6 +29,16 @@ namespace base
 		std::pair<double, double> toPair();
 
 	public:
+		inline double getX()
+		{
+			return _x;
+		}
+		inline double getY()
+		{
+			return _y;
+		}
+
+	public:
 		friend double distance(Point& a, Point& b);
 
 	private:
