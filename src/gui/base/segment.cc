@@ -1,6 +1,5 @@
 #include <gui/base/segment.hh>
 
-BEGIN_GUI_NAMESPACE
 
 static int crossProduct(Segment& v1, Segment& v2)
 {
@@ -66,7 +65,7 @@ static double onSegment(Point& pi, Point& pj, Point& pk)
 		return 0;
 }
 
-static double segmentdoubleersect(Point& p1, Point& p2, Point& p3, Point& p4)
+static double segmentIntersect(Point& p1, Point& p2, Point& p3, Point& p4)
 {
 	double d1 = direction(p3, p4, p1);
 	double d2 = direction(p3, p4, p2);
@@ -86,6 +85,9 @@ static double segmentdoubleersect(Point& p1, Point& p2, Point& p3, Point& p4)
 		return 0;
 }
 
+
+BEGIN_GUI_NAMESPACE
+
 namespace base
 {
 	Segment::Segment()
@@ -100,6 +102,20 @@ namespace base
 	{
 		_a = a;
 		_b = b;
+	}
+	Segment::Segment(double ax, double ay, double bx, double by)
+	{
+		_a = { ax, ay };
+		_b = { bx, by };
+	}
+	Segment::Segment(std::pair<double, double> a, std::pair<double, double> b)
+	{
+		_a = a;
+		_b = b;
+	}
+	bool Segment::intersectAt(Segment & dest)
+	{
+		return segmentIntersect(_a, _b, dest._a, dest._b);
 	}
 }
 

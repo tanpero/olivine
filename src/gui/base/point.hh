@@ -5,6 +5,7 @@
 
 #include <cmath>
 #include <tuple>
+#include <string>
 
 BEGIN_GUI_NAMESPACE
 
@@ -29,6 +30,10 @@ namespace base
 		std::pair<double, double> toPair();
 
 	public:
+		inline std::string toString()
+		{
+			return "(" + std::to_string(_x) + ", " + std::to_string(_y);
+		}
 		inline double getX()
 		{
 			return _x;

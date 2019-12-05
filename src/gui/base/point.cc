@@ -66,3 +66,5 @@ double base::distance(Point& a, Point& b)
 		return std::sqrt(std::pow(a._x - b._x, 2) + std::pow(a._y - b._y, 2));
 	}
 }
+
+END_GUI_NAMESPACE
