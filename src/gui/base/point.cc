@@ -12,6 +12,8 @@ base::Point::~Point()
 
 base::Point::Point(double x, double y)
 {
+	_x = x;
+	_y = y;
 }
 
 base::Point::Point(std::pair<double, double> pair)

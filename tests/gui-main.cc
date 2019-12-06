@@ -1,5 +1,5 @@
 #include <iostream>
-#include <gui/base/segment.hh>
+#include <gui/base/line.hh>
 
 using namespace olivine::gui::base;
 

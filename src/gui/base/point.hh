@@ -32,7 +32,7 @@ namespace base
 	public:
 		inline std::string toString()
 		{
-			return "(" + std::to_string(_x) + ", " + std::to_string(_y);
+			return "(" + std::to_string(_x) + ", " + std::to_string(_y) + ")";
 		}
 		inline double getX()
 		{
@@ -41,6 +41,14 @@ namespace base
 		inline double getY()
 		{
 			return _y;
+		}
+		inline void setX(double x)
+		{
+			_x = x;
+		}
+		inline void setY(double y)
+		{
+			_y = y;
 		}
 
 	public:
