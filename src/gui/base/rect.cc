@@ -1,5 +1,5 @@
 #include <gui/base/rect.hh>
-
+#include <iostream>
 BEGIN_GUI_NAMESPACE
 
 namespace base
@@ -73,8 +73,21 @@ namespace base
 	}
 	bool Rect::includes(Point & dest)
 	{
+		/*
+		*   0 1 2 3 4 5 6 7 8 9
+        * 0 |------------------|
+		* 1 |                  |
+		* 2 |       p(4,2)     |
+		* 3 |                  |
+		* 4 |                  |
+		* 5 |                  |
+		* 6 |                  |
+		* 7 |                  |
+		* 8 |                  |
+		* 9 |------------------|
+		*/
 		return dest.getX() >= _lt.getX() && dest.getX() <= _rt.getX()
-			&& dest.getY() <= _lt.getY() && dest.getY() >= _rb.getY();
+			&& dest.getY() >= _lt.getY() && dest.getY() <= _lb.getY();
 	}
 }
 
