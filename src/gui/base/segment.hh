@@ -28,6 +28,9 @@ namespace base
 		// 是否与另一线段垂直
 		bool bePerpendicularTo(Segment& dest);
 
+		// 将线段绕一点旋转指定度数（0 ≤ n ≤ 360）
+		void rotate(Point center, double angle);
+
 	public:
 		// 长度关系比较
 		bool operator<(Segment& rhs);
