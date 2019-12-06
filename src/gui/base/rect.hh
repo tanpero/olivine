@@ -22,6 +22,8 @@ namespace base
 		Point getRightTop();
 		Point getLeftBottom();
 		Point getRightBottom();
+		std::tuple<Point, Point, Point, Point> getVertices();
+		std::tuple<Segment, Segment, Segment, Segment> getEdges();
 
 	public:
 		Segment getTop();
@@ -32,11 +34,18 @@ namespace base
 		double getHeight();
 		inline std::string toString()
 		{
-			return "Left Top: " + lt.toString() + " Right Top: " + rt.toString()
-				+ "\nLeft Bottom: " + lb.toString() + " Right Bottom: " + rb.toString();
+			return "Left Top: " + _lt.toString() + " - Width: "
+				+ std::to_string(_width) + " - Height: " + std::to_string(_height);
 		}
 
+	public:
+		double distanceOf(Rect& dest);
+		bool isOverlapWith(Rect& dest);
+		bool includes(Point& dest);
+
 	private:
+		double _width;
+		double _height;
 		Point _lt;
 		Point _rt;
 		Point _lb;
