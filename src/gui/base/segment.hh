@@ -1,5 +1,5 @@
-#ifndef _OLIVINE_GUI_BASE_LINE_HH_
-#define _OLIVINE_GUI_BASE_LINE_HH_
+#ifndef _OLIVINE_GUI_BASE_SEGMENT_HH_
+#define _OLIVINE_GUI_BASE_SEGMENT_HH_
 
 #include <gui/base/point.hh>
 
@@ -59,4 +59,4 @@ namespace base
 
 END_GUI_NAMESPACE
 
-#endif // !_OLIVINE_GUI_BASE_LINE_HH_
+#endif // !_OLIVINE_GUI_BASE_SEGMENT_HH_

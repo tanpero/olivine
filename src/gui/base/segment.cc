@@ -1,4 +1,4 @@
-#include <gui/base/line.hh>
+#include <gui/base/segment.hh>
 
 using olivine::gui::base::Point;
 using olivine::gui::base::Segment;
@@ -47,6 +47,23 @@ namespace base
 	bool Segment::intersectAt(Segment & dest)
 	{
 		return isLineSegmentCross(_a, _b, dest.getA(), dest.getB());
+	}
+	bool Segment::beParallelTo(Segment & dest)
+	{
+		Point p1 = _a;
+		Point p2 = _b;
+		Point q1 = dest.getA();
+		Point q2 = dest.getB();
+
+		if (p1.getX() - q1.getX() == p2.getX() - q2.getX())
+		{
+			return true;
+		}
+		else if (p1.getY() - q1.getY() == p2.getY() - q2.getY())
+		{
+			return true;
+		}
+		return false;
 	}
 }
 

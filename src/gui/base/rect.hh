@@ -1,7 +1,7 @@
 #ifndef _OLIVINE_GUI_BASE_RECT_HH_
 #define _OLIVINE_GUI_BASE_RECT_HH_
 
-#include <gui/base/line.hh>
+#include <gui/base/segment.hh>
 
 BEGIN_GUI_NAMESPACE
 
