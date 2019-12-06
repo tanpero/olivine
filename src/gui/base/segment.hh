@@ -29,7 +29,7 @@ namespace base
 		bool bePerpendicularTo(Segment& dest);
 
 		// 将线段绕一点旋转指定度数（0 ≤ n ≤ 360）
-		void rotate(Point center, double angle);
+		Segment rotate(Point center, double angle);
 
 	public:
 		// 长度关系比较

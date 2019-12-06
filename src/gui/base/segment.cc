@@ -65,20 +65,25 @@ namespace base
 		}
 		return false;
 	}
-	void Segment::rotate(Point center, double angle)
+	Segment Segment::rotate(Point center, double angle)
 	{
 		Point p1 = _a;
 		Point p2 = _b;
-		p1.setX((p1.getX() - center.getX()) * std::cos(std::PI / 180. * angle)
-			- (p1.getY() - center.getY()) * std::sin(std::PI / 180. * angle) + center.getX());
-		p1.setY((p1.getX() - center.getX()) * std::sin(std::PI / 180. * angle)
-			+ (p1.getY() - center.getY()) * std::cos(std::PI / 180. * angle) + center.getY());
-		p2.setX((p2.getX() - center.getX()) * std::cos(std::PI / 180. * angle)
-			- (p2.getY() - center.getY()) * std::sin(std::PI / 180. * angle) + center.getX());
-		p2.setY((p2.getX() - center.getX()) * std::sin(std::PI / 180. * angle)
-			+ (p2.getY() - center.getY()) * std::cos(std::PI / 180. * angle) + center.getY());
+		const double pi = 3.14159265358979323;
+
+		p1.setX((p1.getX() - center.getX()) * std::cos(pi / 180. * angle)
+			- (p1.getY() - center.getY()) * std::sin(pi / 180. * angle) + center.getX());
+		p1.setY((p1.getX() - center.getX()) * std::sin(pi / 180. * angle)
+			+ (p1.getY() - center.getY()) * std::cos(pi / 180. * angle) + center.getY());
+
+		p2.setX((p2.getX() - center.getX()) * std::cos(pi / 180. * angle)
+			- (p2.getY() - center.getY()) * std::sin(pi / 180. * angle) + center.getX());
+		p2.setY((p2.getX() - center.getX()) * std::sin(pi / 180. * angle)
+			+ (p2.getY() - center.getY()) * std::cos(pi / 180. * angle) + center.getY());
+
 		_a = p1;
 		_b = p2;
+		return *this;
 	}
 }
 
